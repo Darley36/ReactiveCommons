@@ -1,0 +1,8 @@
+dependencies {
+    implementation project(':model')
+    implementation project(':usecase')
+    implementation 'com.github.bancolombia:commons-jms-mq:0.1.2'
+    implementation 'org.springframework:spring-context'
+    implementation group: 'org.reactivecommons', name: 'async-commons-api', version: '1.0.4'
+    implementation group: 'org.reactivecommons', name: 'async-commons-starter', version: '1.0.0-beta7'
+}
