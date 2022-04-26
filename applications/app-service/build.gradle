@@ -1,6 +1,7 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
+	implementation project( ':mq-sender')
 	implementation project( ':mq-listener')
     implementation project(':model')
     implementation project(':usecase')

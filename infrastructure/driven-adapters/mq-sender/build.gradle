@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(':model')
+    implementation 'com.github.bancolombia:commons-jms-mq:0.1.2'
+    implementation 'org.springframework:spring-context'
+    implementation 'org.reactivecommons:async-commons-api:1.0.4'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.2'
+}
