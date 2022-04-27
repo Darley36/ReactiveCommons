@@ -1,11 +1,12 @@
 package co.com.reactive.mq.sender;
 
-import co.com.bancolombia.commons.jms.mq.EnableMQMessageSender;
 import co.com.reactive.model.modelmessage.ModelMessage;
-import lombok.AllArgsConstructor;
+import co.com.reactive.model.modelmessage.functionsMQ.EventsGateway;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.reactivecommons.api.domain.DomainEvent;
 import org.reactivecommons.api.domain.DomainEventBus;
+import org.reactivecommons.async.impl.config.annotations.EnableDomainEventBus;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
@@ -16,9 +17,9 @@ import static reactor.core.publisher.Mono.from;
 
 @Log
 @Component
-@AllArgsConstructor
-@EnableMQMessageSender
-public class SampleMQMessageSender {
+@EnableDomainEventBus
+@RequiredArgsConstructor
+public class SampleMQMessageSender implements EventsGateway {
     private final DomainEventBus domainEventBus;
 
     public Mono<Void> emit(ModelMessage event) {

@@ -1,7 +1,8 @@
 dependencies {
     implementation project(':model')
-    implementation 'com.github.bancolombia:commons-jms-mq:0.1.2'
+    //implementation 'com.github.bancolombia:commons-jms-mq:0.1.2'
     implementation 'org.springframework:spring-context'
-    implementation 'org.reactivecommons:async-commons-api:1.0.4'
+    implementation 'org.reactivecommons:async-commons-api:0.2.4-beta1'
+    compile group: 'org.reactivecommons', name: 'async-commons-starter', version: '0.6.2-beta'
     implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.2'
 }
