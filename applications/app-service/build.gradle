@@ -8,9 +8,6 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter'
     compile 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.2'
-    implementation 'org.reactivecommons:async-commons-api:0.2.4-beta1'
-    implementation 'org.reactivecommons:async-commons-starter:0.2.4-beta1'
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
 
 }
