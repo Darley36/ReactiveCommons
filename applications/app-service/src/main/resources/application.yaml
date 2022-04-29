@@ -1,14 +1,26 @@
-##Spring Configuration
 server:
   port: 8080
 spring:
   application:
-    name: try-reactive-commons
+    name: "try-reactive-commons"
   devtools:
     add-properties: false
   h2:
     console:
       enabled: true
-      path: /h2
+      path: "/h2"
   profiles:
-    include:
+    include: null
+commons:
+  jms:
+    input-concurrency: 10
+    input-queue: "DEV.QUEUE.2"
+    input-queue-alias: ""
+    reactive: false
+    output-concurrency: 10
+    output-queue: "DEV.QUEUE.1"
+    producer-ttl: 0
+ibm:
+  mq:
+    channel: "DEV.APP.SVRCONN"
+    user: "app"
