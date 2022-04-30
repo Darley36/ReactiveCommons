@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class SampleMQMessageListener {
 
     private final FirstMessageControllerUseCase controllerUseCase;
-    @Bean
+    @Bean("integrationRegistry")
     public HandlerRegistry eventSubscriptions(){
         return HandlerRegistry.register()
                 .listenEvent("event.listener.queue", event -> controllerUseCase.handler(event.getData()), ModelMessage.class);

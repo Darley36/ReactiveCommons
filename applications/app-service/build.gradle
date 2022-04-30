@@ -10,6 +10,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
 
+
+    compile group: 'org.reactivecommons', name: 'async-commons-starter', version: '0.6.2-beta'
+    compile 'org.reactivecommons:async-commons-api:0.2.4-beta1'
+    compile 'org.reactivecommons.utils:object-mapper:0.1.0'
+
+    compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.13.1'
 }
 
 task explodedJar(type: Copy) {
