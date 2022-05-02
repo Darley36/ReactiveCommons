@@ -1,6 +1,8 @@
 dependencies {
     implementation project(':model')
     implementation project(':usecase')
-    implementation 'org.springframework:spring-context'
+    compile('org.springframework:spring-context')
     compile group: 'org.reactivecommons', name: 'async-commons-starter', version: '0.6.2-beta'
+    compile 'org.reactivecommons.utils:object-mapper:0.1.0'
+    compile 'org.reactivecommons:async-commons-api:0.2.4-beta1'
 }

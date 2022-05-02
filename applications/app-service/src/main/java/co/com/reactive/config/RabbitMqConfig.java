@@ -10,7 +10,6 @@ import org.reactivecommons.async.api.handlers.registered.RegisteredEventListener
 import org.reactivecommons.async.impl.DiscardNotifier;
 import org.reactivecommons.async.impl.HandlerResolver;
 import org.reactivecommons.async.impl.communications.ReactiveMessageListener;
-import org.reactivecommons.async.impl.communications.ReactiveMessageSender;
 import org.reactivecommons.async.impl.communications.TopologyCreator;
 import org.reactivecommons.async.impl.config.ConnectionFactoryProvider;
 import org.reactivecommons.async.impl.config.RabbitProperties;
@@ -49,7 +48,7 @@ import java.util.logging.Level;
         AsyncProps.class
 })
 @Import(BrokerConfigProps.class)
-public class MQConfig {
+public class RabbitMqConfig {
 
     @Value("${spring.application.name}")
     private String appName;
@@ -111,10 +110,10 @@ public class MQConfig {
 
 
     //Relacionado con todo lo del listener del evento
-
+/*
     @Bean
     @Primary
-    public ApplicationEventListener eventListener1(HandlerResolver resolver, MessageConverter messageConverter,
+    public ApplicationEventListener eventListener(@Qualifier("integrationResolver")HandlerResolver resolver, MessageConverter messageConverter,
                                                   @Qualifier("integrationListener") ReactiveMessageListener receiver,
                                                   DiscardNotifier discardNotifier) {
 
@@ -170,5 +169,7 @@ public class MQConfig {
         //                ConcurrentHashMap::putAll);
         return new HandlerResolver(null, eventListeners, null, null);
     }
+
+ */
 
 }

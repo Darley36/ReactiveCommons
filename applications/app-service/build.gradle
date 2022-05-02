@@ -11,9 +11,10 @@ dependencies {
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
 
 
-    compile group: 'org.reactivecommons', name: 'async-commons-starter', version: '0.6.2-beta'
-    compile 'org.reactivecommons:async-commons-api:0.2.4-beta1'
+    //compile group: 'org.reactivecommons', name: 'async-commons-starter', version: '0.6.2-beta'
+    compile 'org.reactivecommons:async-commons-api:0.6.2-beta'
     compile 'org.reactivecommons.utils:object-mapper:0.1.0'
+    implementation group: 'io.projectreactor.rabbitmq', name: 'reactor-rabbitmq', version: '1.4.6.RELEASE'
 
     compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.13.1'
 }

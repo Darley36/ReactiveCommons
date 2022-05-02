@@ -7,6 +7,8 @@ import org.reactivecommons.async.impl.config.annotations.EnableMessageListeners;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import static org.reactivecommons.async.api.HandlerRegistry.register;
+
 
 @Configuration
 @EnableMessageListeners
@@ -14,9 +16,10 @@ import org.springframework.context.annotation.Configuration;
 public class SampleMQMessageListener {
 
     private final FirstMessageControllerUseCase controllerUseCase;
+
     @Bean("integrationRegistry")
-    public HandlerRegistry eventSubscriptions(){
-        return HandlerRegistry.register()
+    public HandlerRegistry eventSubscriptions() {
+        return register()
                 .listenEvent("event.listener.queue", event -> controllerUseCase.handler(event.getData()), ModelMessage.class);
     }
 }

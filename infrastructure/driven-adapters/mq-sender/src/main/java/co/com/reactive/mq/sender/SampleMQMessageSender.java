@@ -22,6 +22,7 @@ import static reactor.core.publisher.Mono.from;
 public class SampleMQMessageSender implements EventsGateway {
     private final DomainEventBus domainEventBus;
 
+    @Override
     public Mono<Void> emit(ModelMessage event) {
         log.log(Level.INFO, "Emitiendo evento de dominio: {0}: {1}", new String[]{"event.publisher.queue", event.toString()});
         return from(domainEventBus.emit(new DomainEvent<>("event.publisher.queue", UUID.randomUUID().toString(), event)));
