@@ -22,4 +22,10 @@ public class SampleMQMessageListener {
         return register()
                 .listenEvent("event.listener.queue", event -> controllerUseCase.handler(event.getData()), ModelMessage.class);
     }
+
+    @Bean("eventNotificationListener")
+    public HandlerRegistry eventSubscriptionsReprocess() {
+        return register()
+                .handleCommand("message.command.retry",command -> controllerUseCase.RecieveMessage(command.getData()),ModelMessage.class);
+    }
 }

@@ -7,6 +7,7 @@ import lombok.extern.java.Log;
 import org.reactivecommons.api.domain.DomainEvent;
 import org.reactivecommons.api.domain.DomainEventBus;
 import org.reactivecommons.async.impl.config.annotations.EnableDomainEventBus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
@@ -20,6 +21,7 @@ import static reactor.core.publisher.Mono.from;
 @EnableDomainEventBus
 @RequiredArgsConstructor
 public class SampleMQMessageSender implements EventsGateway {
+
     private final DomainEventBus domainEventBus;
 
     @Override

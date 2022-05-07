@@ -5,18 +5,19 @@ dependencies {
 	implementation project( ':mq-listener')
     implementation project(':model')
     implementation project(':usecase')
+    compile project(":command-sender")
     compile 'org.springframework.boot:spring-boot-starter'
     compile 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
 
-
-    //compile group: 'org.reactivecommons', name: 'async-commons-starter', version: '0.6.2-beta'
     compile 'org.reactivecommons:async-commons-api:0.6.2-beta'
     compile 'org.reactivecommons.utils:object-mapper:0.1.0'
     implementation group: 'io.projectreactor.rabbitmq', name: 'reactor-rabbitmq', version: '1.4.6.RELEASE'
 
     compile group: 'com.rabbitmq', name: 'amqp-client', version: '5.13.1'
+
+
 }
 
 task explodedJar(type: Copy) {
