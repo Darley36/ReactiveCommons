@@ -4,6 +4,8 @@
 
 Proyecto de practica para ensayar reactive-commons con la arquitectura de bancolombia.
 
+Se realizó el ajuste para que el codigo emita y escuche eventos y comandos
+
 Lee el art�culo [Clean Architecture � Aislando los detalles](https://medium.com/bancolombia-tech/clean-architecture-aislando-los-detalles-4f9530f35d7a)
 
 # Arquitectura
